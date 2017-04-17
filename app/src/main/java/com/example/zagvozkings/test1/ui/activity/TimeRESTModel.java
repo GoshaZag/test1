@@ -22,7 +22,7 @@ public class TimeRESTModel implements TimeModel {
 
     @Override
     public TimeContainer getTime() {
-        ObjectMapper mapper = new ObjectMapper();
+        /*ObjectMapper mapper = new ObjectMapper();
         TimeContainer timeContainer;
 
         try {
@@ -30,9 +30,9 @@ public class TimeRESTModel implements TimeModel {
         } catch (IOException e) {
             e.printStackTrace();
             return null;
-        }
+        }*/
 
-        return timeContainer;
+        return restUtils.getTimeOnServer();
     }
 
 }

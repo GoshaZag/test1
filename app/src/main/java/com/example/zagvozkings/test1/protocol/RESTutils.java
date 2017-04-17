@@ -1,6 +1,10 @@
 package com.example.zagvozkings.test1.protocol;
 
+import com.example.zagvozkings.test1.contanier.TimeContainer;
+
 import org.androidannotations.rest.spring.annotations.Get;
+import org.androidannotations.rest.spring.annotations.Header;
+import org.androidannotations.rest.spring.annotations.Headers;
 import org.androidannotations.rest.spring.annotations.Rest;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -9,9 +13,9 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
  * Created by zagvozkings on 13.04.2017.
  */
 
-@Rest(converters = {MappingJackson2HttpMessageConverter.class, StringHttpMessageConverter.class})
+@Rest(converters = {MappingJackson2HttpMessageConverter.class})
 public interface RESTutils {
 
     @Get("http://date.jsontest.com")
-    String getTimeOnServer();
+    TimeContainer getTimeOnServer();
 }

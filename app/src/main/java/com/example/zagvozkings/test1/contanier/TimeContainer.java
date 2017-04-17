@@ -12,8 +12,6 @@ public class TimeContainer {
     //private String milliseconds_since_epoch;
     private String date;
 
-    public TimeContainer(){}
-
     public String getTime(){return time;}
     public String getDate(){return date;}
 

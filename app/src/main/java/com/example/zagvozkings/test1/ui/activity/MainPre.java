@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 
 import com.example.zagvozkings.test1.ui.activity.interfaces.MainPresenter;
 import com.example.zagvozkings.test1.ui.activity.interfaces.MainView;
+import com.example.zagvozkings.test1.ui.activity.interfaces.OldDataModel;
 import com.example.zagvozkings.test1.ui.activity.interfaces.TimeModel;
 import com.example.zagvozkings.test1.ui.customViev.TimeView;
 import com.example.zagvozkings.test1.ui.customViev.TimeView_;
@@ -28,32 +29,39 @@ public class MainPre implements MainPresenter {
 
     @Bean(TimeRESTModel.class)
     protected TimeModel timeModel;
+    @Bean(OldDataNewList.class)
+    protected OldDataModel oldData;
 
     @RootContext
     protected Context context;
 
     private List<View> listTime;
-    private MainView mainView;
 
     @AfterViews
     protected void init(){
-        if (listTime != null && mainView != null){
-            MainActivity activity = (MainActivity)context;
-            for (View view : listTime){
-                ViewGroup parent = (ViewGroup) view.getParent();
-                if (parent != null) {
-                    parent.removeView(view);
-                }
-                activity.addView(view);
-            }
-        } else {
+        //загрузка данных или создание нового списка
+        if (listTime == null)
+            listTime = oldData.loadListView();
+        //если придет null, то создадим новый список
+        if (listTime == null)
             listTime = new ArrayList<>();
+
+        //если некуда выводим, то на этом и закончим
+        MainActivity activity = (MainActivity)context;
+        if (activity == null) return;
+
+        //если есть что выводить, то выведем
+        for (View view : listTime) {
+            ViewGroup parent = (ViewGroup) view.getParent();
+            if (parent != null) {
+                parent.removeView(view);
+            }
+            activity.addView(view);
         }
     }
 
     @Override
     public void createViev(MainView mainView) {
-        this.mainView = mainView;
         TimeView_ view = new TimeView_(context);
         view.onFinishInflate();
         listTime.add(view);

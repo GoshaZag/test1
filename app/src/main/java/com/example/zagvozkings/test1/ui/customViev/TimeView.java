@@ -18,6 +18,7 @@ import org.androidannotations.annotations.EViewGroup;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 
+
 /**
  * Created by zagvozkings on 13.04.2017.
  */
@@ -39,26 +40,6 @@ public class TimeView extends LinearLayout{
     protected void init(){
         progresBar = new ProgressBar(getContext());
         Line.addView(progresBar, 0);
-        Line.setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        x = (int) event.getX();
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        int newX = (int) event.getX();
-                        int size = Line.getWidth() / 4;
-                        if (x > newX && Math.abs(x - newX) > size) {
-                            TimeButtonDel.setVisibility(VISIBLE);
-                        } else if (x < newX && Math.abs(x - newX) > size) {
-                            TimeButtonDel.setVisibility(INVISIBLE);
-                        }
-                        break;
-                }
-                return true;
-            }
-        });
     }
 
     public TimeView(Context context) {
@@ -87,4 +68,5 @@ public class TimeView extends LinearLayout{
         if (main != null)
             main.delVieW(this);
     }
+
 }
