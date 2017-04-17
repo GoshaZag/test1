@@ -1,6 +1,6 @@
 package com.example.zagvozkings.test1.ui.activity.interfaces;
 
-import com.example.zagvozkings.test1.contanier.TimeContainer;
+import com.example.zagvozkings.test1.container.TimeContainer;
 
 /**
  * Created by zagvozkings on 13.04.2017.

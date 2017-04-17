@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements MainView{
     protected LinearLayout main;
 
     @NonConfigurationInstance
-    @Bean(MainPre.class)
+    @Bean(MainPresenterImp.class)
     protected MainPresenter mainPresenter;
 
 

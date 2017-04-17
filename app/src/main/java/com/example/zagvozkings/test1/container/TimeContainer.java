@@ -1,4 +1,4 @@
-package com.example.zagvozkings.test1.contanier;
+package com.example.zagvozkings.test1.container;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

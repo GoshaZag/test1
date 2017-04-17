@@ -1,15 +1,13 @@
-package com.example.zagvozkings.test1.ui.customViev;
+package com.example.zagvozkings.test1.ui.customView;
 
 import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.zagvozkings.test1.R;
-import com.example.zagvozkings.test1.contanier.TimeContainer;
+import com.example.zagvozkings.test1.container.TimeContainer;
 import com.example.zagvozkings.test1.ui.activity.MainActivity;
 
 import org.androidannotations.annotations.AfterViews;

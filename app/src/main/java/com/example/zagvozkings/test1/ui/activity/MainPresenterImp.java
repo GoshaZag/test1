@@ -8,8 +8,8 @@ import com.example.zagvozkings.test1.ui.activity.interfaces.MainPresenter;
 import com.example.zagvozkings.test1.ui.activity.interfaces.MainView;
 import com.example.zagvozkings.test1.ui.activity.interfaces.OldDataModel;
 import com.example.zagvozkings.test1.ui.activity.interfaces.TimeModel;
-import com.example.zagvozkings.test1.ui.customViev.TimeView;
-import com.example.zagvozkings.test1.ui.customViev.TimeView_;
+import com.example.zagvozkings.test1.ui.customView.TimeView;
+import com.example.zagvozkings.test1.ui.customView.TimeView_;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Background;
@@ -25,7 +25,7 @@ import java.util.List;
  */
 
 @EBean
-public class MainPre implements MainPresenter {
+public class MainPresenterImp implements MainPresenter {
 
     @Bean(TimeRESTModel.class)
     protected TimeModel timeModel;

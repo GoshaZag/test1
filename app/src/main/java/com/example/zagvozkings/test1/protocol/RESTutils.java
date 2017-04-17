@@ -1,12 +1,9 @@
 package com.example.zagvozkings.test1.protocol;
 
-import com.example.zagvozkings.test1.contanier.TimeContainer;
+import com.example.zagvozkings.test1.container.TimeContainer;
 
 import org.androidannotations.rest.spring.annotations.Get;
-import org.androidannotations.rest.spring.annotations.Header;
-import org.androidannotations.rest.spring.annotations.Headers;
 import org.androidannotations.rest.spring.annotations.Rest;
-import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 
 /**
